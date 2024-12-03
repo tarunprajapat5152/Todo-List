@@ -33,17 +33,13 @@ function addTodo() {
     doneBtn.style.marginLeft = "12px";
     // add event
     editBtn.addEventListener(("click"), ()=>{
-      let chars = li.innerText.split(".");
-      let key = chars[0];
-      let val = chars[1];
-      inputText.focus();
-      let updatedText = key+". " + val; 
+      let p = prompt("Now You Can Update...")
+      let updatedText = li.innerText.slice(0,4)+". " + p.substring(0); 
       li.innerText = updatedText;
       console.log(updatedText);
-      let updatedText1 = val; 
+      let updatedText1 = p.substring(0); 
       console.log(updatedText1);
-      localStorage.setItem(li.innerText.charAt(0),updatedText1);
-      inputText.value = val;
+      localStorage.setItem(li.innerText.slice(0,4),updatedText1);
     })
     removeBtn.addEventListener(("click"), ()=>{
       let chars = li.innerText.split(".");
@@ -119,26 +115,13 @@ window.onload = function () {
     doneBtn.style.marginLeft = "12px";
     // add event
     editBtn.addEventListener(("click"), (e)=>{
-      // let p = prompt("Now You Can Update...")
-      // // console.log(e.target.p);
-      // let updatedText = li.innerText.charAt(0)+". " + p.substring(0); 
-      // li.innerText = updatedText;
-      // console.log(updatedText);
-      // let updatedText1 = p.substring(0); 
-      // console.log(updatedText1);
-      // localStorage.setItem(li.innerText.charAt(0),updatedText1);
-      let chars = li.innerText.split(".");
-      let key = chars[0];
-      let val = chars[1];
-      inputText.focus();
-      let updatedText = key+". " + val; 
+      let p = prompt("Now You Can Update...")
+      let updatedText = li.innerText.slice(0,4)+". " + p.substring(0); 
       li.innerText = updatedText;
       console.log(updatedText);
-      let updatedText1 = val; 
+      let updatedText1 = p.substring(0); 
       console.log(updatedText1);
-      localStorage.setItem(key,updatedText1);
-      inputText.value = val;
-      li.innerText = updatedText;
+      localStorage.setItem(li.innerText.slice(0,4),updatedText1);
     })
     removeBtn.addEventListener(("click"), (e)=>{
       let chars = li.innerText.split(".");
